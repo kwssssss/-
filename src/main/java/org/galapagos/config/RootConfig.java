@@ -14,7 +14,7 @@ import org.springframework.context.annotation.Configuration;
 import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;
 
-@Configuration // 설정파일이니 분석하라는 뜻
+@Configuration // 
 @ComponentScan(basePackages = { "org.galapagos.service" })
 @MapperScan(basePackages = { "org.galapagos.mapper" })
 public class RootConfig {
@@ -25,13 +25,11 @@ public class RootConfig {
 	@Bean
 	public DataSource dataSource() {
 		HikariConfig config = new HikariConfig();
-//		config.setDriverClassName("com.mysql.cj.jdbc.Driver");
-//		config.setJdbcUrl("jdbc:mysql://localhost:3306/glory_db");
 
 		config.setDriverClassName("net.sf.log4jdbc.sql.jdbcapi.DriverSpy");
-		config.setJdbcUrl("jdbc:log4jdbc:mysql://localhost:3306/glory_db");
+		config.setJdbcUrl("jdbc:log4jdbc:mysql://localhost:3306/mine_db");
 
-		config.setUsername("GLORY");
+		config.setUsername("mine");
 		config.setPassword("1234");
 
 		HikariDataSource dataSource = new HikariDataSource(config);

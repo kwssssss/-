@@ -20,8 +20,8 @@
 <body>
 	<div class="container">
 		<header class="jumbotron mb-0 rounded-0">
-			<h1>Backend Study</h1>
-			<p>자바 기반의 백엔드 기술을 배웁니다.</p>
+			<h1>나만의 사이트</h1>
+			<p>수업시간에 배운 것들을 복습해봅시다.</p>
 		</header>
 
 		<%@ include file="menu.jsp"%>

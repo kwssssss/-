@@ -29,10 +29,10 @@ import lombok.extern.log4j.Log4j;
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	
 	@Autowired
-	private DataSource datasource; // RootConfig에 있는 히카리 
+	private DataSource datasource;
 	
 	@Bean
-	public PasswordEncoder passwordEncoder() { // 이거 설정되면 비밀번호 암호화 된거 아니면 작동 안함
+	public PasswordEncoder passwordEncoder() { 
 		return new BCryptPasswordEncoder();
 		}
 	

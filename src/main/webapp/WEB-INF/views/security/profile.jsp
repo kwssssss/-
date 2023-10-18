@@ -24,6 +24,11 @@
 			<fmt:formatDate value="${member.regDate}" pattern="yyyy-MM-dd HH:mm"/>
 		</div>
 	</div>
+	<div>
+		<a class="nav-link" href="/security/pwd">회원정보 수정</a>
+		
+	</div>
 </div>
+
 
 <%@ include file="../layouts/footer.jsp" %>

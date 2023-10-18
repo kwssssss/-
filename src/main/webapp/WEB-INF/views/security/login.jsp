@@ -41,7 +41,7 @@
 			로그인
 		</button>
 		
-		<button type="#" class="btn btn-primary btn-block">
+		<button type="button" onclick="location.href='signup'" class="btn btn-primary btn-block">
 			<i class="fa-solid fa-right-to-bracket"></i>
 			회원가입
 		</button>
