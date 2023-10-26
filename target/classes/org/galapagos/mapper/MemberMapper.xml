@@ -36,4 +36,10 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		insert into tbl_member_auth(username, auth)
 		values(#{username}, #{auth})		
 	</insert>
+	
+	<update id="changePassword">
+		update tbl_member_auth
+		set password = #{encPassword}
+		where username = #{username}
+	</update>
 </mapper>

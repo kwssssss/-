@@ -5,7 +5,8 @@
 <%-- 개별 페이지 --%>
 
 <h1>비밀번호 재확인</h1>
-<form action="/security/update" method="post">
+<form action="/security/pwd" method="post">
+	<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
     <label for="password">비밀번호:</label>
     <input type="password" id="password" name="password">
     <input type="submit" value="확인">

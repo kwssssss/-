@@ -7,6 +7,7 @@ import java.io.OutputStream;
 import javax.servlet.http.HttpServletResponse;
 
 import org.galapagos.domain.AuthVO;
+import org.galapagos.domain.ChangePasswordVO;
 import org.galapagos.domain.MemberVO;
 import org.galapagos.mapper.MemberMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -58,5 +59,19 @@ public class MemberServiceImpl implements MemberService {
 				
 			}
 			
+	}
+	
+	public boolean changePassword(ChangePasswordVO vo) {
+		MemberVO member = mapper.read(vo.getUsername());
+		
+		if(!pwEncoder.matches(vo.getOrgPassword(), member.getPassword()) ) {
+			return false;
+		}
+		
+		String encPassword = pwEncoder.encode(vo.getNewPassword());
+		vo.setEncPassword(encPassword);
+		mapper.changePassword(vo);
+		
+		return true;
 	}
 }
